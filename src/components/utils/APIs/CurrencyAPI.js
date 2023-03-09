@@ -1,5 +1,4 @@
 import axios from "axios";
-import config from "../../../config.json";
 
 // eslint-disable-next-line
 export default {

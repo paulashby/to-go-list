@@ -7,7 +7,7 @@ import 'react-dropdown/style.css';
 function Currency({ destinationData }) {
 
 	const [currencyNames, setCurrencyNames] = useState(null);	
-	const [baseCurrency, setBaseCurrency] = useState("GBP British pounds");
+	const [baseCurrency, setBaseCurrency] = useState("GBP Pound sterling");
 	const [destinationCurrency, setDestinationCurrency] = useState(null);
 	const [baseValue, setBaseValue] = useState(1);
 	const [destinationValue, setDestinationValue] = useState(1);
@@ -104,6 +104,7 @@ function Currency({ destinationData }) {
 				const destCurrCode = countryCurrencies[destinationData.properties.country_code];
 				setDestinationCurrency(`${destCurrCode.toUpperCase()} ${filteredNames[destCurrCode]}`);
 			});
+			// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	function getCode(str) {
@@ -147,23 +148,26 @@ function Currency({ destinationData }) {
 	}, [destinationData]);
 
 	return (
-		<div className="container mx-auto h-auto rounded-xl" id="currency">
+		<div className="container mx-auto h-auto rounded-xl z-10" id="currency">
 
 			{/* Heading */}
 			<span className="pt-3 gap-2 flex justify-center mx-1 mt-2  bg-[#025] rounded-t-xl rounded-b h-12">
 				<span className="font-itim relative text-blue-200 font-bold leading-6">Currency Converter</span>
 			</span>
-			<div className="container py-2">
-				<input value={baseValue} onChange={(e) => {
-					setBaseValue(e.target.value);
-					updateCurrency(baseCurrency, destinationCurrency, e.target.value, setDestinationValue);
-				}} />
-				<CurrencySelect zi={10} currencyNames={currencyNames} menuCurrency={baseCurrency} setMenuCurrency={setBaseCurrency} />
-				<input value={destinationValue} onChange={(e) => {
+			<div className="container p-2 flex flex-wrap gap-x-4 sm:flex-nowrap">
+				<div className="w-full">
+					<input className="text-4xl w-full" value={baseValue} onChange={(e) => {
+						setBaseValue(e.target.value);
+						updateCurrency(baseCurrency, destinationCurrency, e.target.value, setDestinationValue);
+					}} />
+					<CurrencySelect zi={10} currencyNames={currencyNames} menuCurrency={baseCurrency} setMenuCurrency={setBaseCurrency} />
+				</div>
+				<div className="w-full">
+				<input className="text-4xl mt-4 sm:mt-0 w-full" value={destinationValue} onChange={(e) => {
 					setDestinationValue(e.target.value);
 					updateCurrency(destinationCurrency, baseCurrency, e.target.value, setBaseValue);
 				}} />
-				<CurrencySelect  zi={0} currencyNames={currencyNames} menuCurrency={destinationCurrency} setMenuCurrency={setDestinationCurrency} />
+				<CurrencySelect  zi={0} currencyNames={currencyNames} menuCurrency={destinationCurrency} setMenuCurrency={setDestinationCurrency} /></div>
 			</div>
 		</div>
 	);

@@ -117,7 +117,7 @@ function Weather({ destinationData }) {
     }, [destinationData, chartOptions, currLocation, lat, lon, name]);
 
     return (
-        <div className={Object.hasOwn(destinationData.properties, "lat") ? "group loaded md:col-span-2 xl:col-span-8" : "group md:col-span-2"}>
+        <div className={Object.hasOwn(destinationData.properties, "lat") ? "group loaded md:col-span-2 xl:col-span-8" : "group md:col-span-2  xl:col-span-8"}>
             <div className="pt-3 gap-2 flex justify-center mx-1 mt-2  bg-[#025] rounded-t-xl rounded-b w-full h-[48px]">
                 <h2 className="font-itim text-md relative text-blue-200 font-bold leading-6">Weather View</h2>
             </div>

@@ -19,43 +19,43 @@
 
 @media (min-width: 768px) {
     #weather-chart {
-        width: 45vw;
+        width: 60.5vw;
     }
 }
 
 @media (min-width: 845px) {
     #weather-chart {
-        width: 380px;
+        width: 506px;
     }
 }
 
 @media (min-width: 1024px) {
     #weather-chart {
-        width: 45.5vw;
+        width: 62vw;
     }
 }
 
 @media (min-width: 1120px) {
     #weather-chart {
-        width: 507px;
+        width: 677px;
     }
 }
 
 @media (min-width: 1280px) {
     #weather-chart {
-        width: 46vw;
+        width: 61vw;
     }
 }
 
 @media (min-width: 1400px) {
     #weather-chart {
-        width: 645px;
+        width: 850px;
     }
 }
 
 @media (min-width: 1536px) {
     #weather-chart {
-        width: 46vw;
-        max-width: 770px;
+        width: 61vw;
+        max-width: 1021px;
     }
 }

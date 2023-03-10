@@ -148,13 +148,13 @@ function Currency({ destinationData }) {
 	}, [destinationData]);
 
 	return (
-		<div className="container mx-auto h-auto rounded-xl z-10" id="currency">
+		<div className="container mx-auto h-auto rounded-xl z-10  xl:col-span-4" id="currency">
 
 			{/* Heading */}
 			<span className="pt-3 gap-2 flex justify-center mx-1 mt-2  bg-[#025] rounded-t-xl rounded-b h-12">
 				<span className="font-itim relative text-blue-200 font-bold leading-6">Currency Converter</span>
 			</span>
-			<div className="container p-2 flex flex-wrap gap-x-4 sm:flex-nowrap">
+			<div className="container p-2 flex flex-wrap gap-x-4 sm:max-md:flex-nowrap">
 				<div className="w-full">
 					<input className="text-4xl w-full" value={baseValue} onChange={(e) => {
 						setBaseValue(e.target.value);
@@ -163,7 +163,7 @@ function Currency({ destinationData }) {
 					<CurrencySelect zi={10} currencyNames={currencyNames} menuCurrency={baseCurrency} setMenuCurrency={setBaseCurrency} />
 				</div>
 				<div className="w-full">
-				<input className="text-4xl mt-4 sm:mt-0 w-full" value={destinationValue} onChange={(e) => {
+				<input className="text-4xl mt-4 sm:max-md:mt-0 w-full" value={destinationValue} onChange={(e) => {
 					setDestinationValue(e.target.value);
 					updateCurrency(destinationCurrency, baseCurrency, e.target.value, setBaseValue);
 				}} />

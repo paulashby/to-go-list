@@ -52,7 +52,7 @@ In its current state, the project should be considered a minimum viable product.
 - [React Chartjs-2](https://react-chartjs-2.js.org/) - React integration for chart.js 
 - [uniqid](https://www.npmjs.com/package/uniqid) - unique Hexatridecimal ID generation for itinerary items
 
-### API's
+### APIs
 - [Geoapify Places API](https://apidocs.geoapify.com/docs/places/#about) - attraction data
 - [OpenMeteo API](https://open-meteo.com/) - annual weather data
 - [Pixabay API](https://pixabay.com/api/docs/) - images
